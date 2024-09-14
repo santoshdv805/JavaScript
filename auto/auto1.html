@@ -1,0 +1,81 @@
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>demo</title> 
+<meta name="description" content="">
+<meta name="generator" content="Studio 3 http://aptana.com/">
+<meta name="author" content="amir">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style type="text/css" style="display:none">
+ul.auto-list{display:none;position:absolute;top:0px;left:0px;border:1px solid green;background-color:#A3DF99;padding:0;margin:0;list-style:none;}ul.auto-list>li:hover,ul.auto-list>li[data-selected=true]{background-color:#236574;}ul.auto-list>li{border:1px solid gray;cursor:default;padding:2px;}mark{font-weight:bold;}
+</style>
+<style type="text/css">
+#ta{width:300px;height :100px;font-size:11px;font-family:"Helvetica Neue",Arial,sans-serif;white-space:pre;}
+</style> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+
+ <script src="auto.js" type="text/javascript"></script> 
+ 
+ <script type="text/javascript">var urls = [
+		"facebook.com",
+		"google.com",
+		"twitter.com",
+		"amirharel.com",
+		"amazon.com",
+		"microsoft.com",
+		"quora.com",
+		"walla.co.il",
+		"ebay.com",
+		"gowala.com",
+		"myspace.com",
+		"youtube.com"		
+		];
+		
+		function initURLTextarea(){
+			$("#outter textarea").autocomplete({
+						wordCount:1,
+						mode: "outter",
+						on: {
+							query: function(text,cb){
+								var words = [];
+								for( var i=0; i<urls.length; i++ ){
+									if( urls[i].toLowerCase().indexOf(text.toLowerCase()) == 0 ) words.push(urls[i]);
+									
+								}
+								cb(words);								
+							}
+						}
+					});
+		}
+		
+		
+		var countries = ["India","Austria","Srilanka","Pakistan"];
+  		function initContriesTextarea(){
+			$("#contries textarea").autocomplete({
+						wordCount:1,
+						on: {
+							query: function(text,cb){
+								var words = [];
+								for( var i=0; i<countries.length; i++ ){
+									if( countries[i].toLowerCase().indexOf(text.toLowerCase()) == 0 ) words.push(countries[i]);
+									if( words.length > 5 ) break;
+								}
+								cb(words);								
+							}
+						}
+					});
+		}
+		
+  		
+  		$(document).ready(function(){
+  			initContriesTextarea();
+			initURLTextarea();
+
+  		});
+		
+		
+  		
+  	</script> </head><body><div><div id="contries">In this example the auto complete will try to find a match of country names<br> <textarea style="width: 400px; height 250px;"></textarea></div><div id="outter">In this example i set the mode to be "outter" which is the default mode in IE<br> I plan to fix this but will take some time...<br> Just start type major sites urls and it will autocomplete(like facebook.com)<br> <textarea style="width: 200px; height 250px;"></textarea></div></div><script language="javascript">
+	
+</script><div style="position: absolute; top: 120px; left: 8px; border-collapse: separate; border-style: solid; border-width: 1px; border-spacing: 0px; direction: ltr; font-size: 13.3333px; font-stretch: normal; font-style: normal; font-family: monospace; font-variant: normal; font-weight: normal; width: 200px; height: 30px; letter-spacing: normal; margin: 0px; padding: 2px; overflow: hidden; line-height: normal; z-index: -10;"><span id="test-width_auto_1" style="line-block">&nbsp;</span></div><ul class="auto-list"></ul><div style="position: absolute; top: 26px; left: 8px; border-collapse: separate; border-style: solid; border-width: 1px; border-spacing: 0px; direction: ltr; font-size: 13.3333px; font-stretch: normal; font-style: normal; font-family: monospace; font-variant: normal; font-weight: normal; width: 400px; height: 30px; letter-spacing: normal; margin: 0px; padding: 2px; overflow: hidden; line-height: normal; z-index: -10;"><span id="auto_2" style="display:inline-block;">f</span><span id="rest" style="max-width:" 404px'="">&nbsp;</span></div><ul class="auto-list" style="left: 18px; top: 44px; display: none;"><li data-value="Fiji">Fiji</li><li data-value="Finland">Finland</li><li data-value="France">France</li></ul></body></html>
